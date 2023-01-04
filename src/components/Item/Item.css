@@ -1,0 +1,29 @@
+
+.cardflex{
+    margin-top: 3%;
+    width: 30%;
+}
+
+.card-name{
+    text-align: center;
+    margin-top: 5%;
+    color: black;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.card-price{
+    text-align: center;
+    margin-top: 3%; 
+    color: black;
+    font-size: 1.3rem;
+}
+
+.card-link{
+    text-decoration: none;
+}
+
+.card-btn{
+    margin-left: 38%;
+    margin-top: 2%;
+}
