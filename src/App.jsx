@@ -7,14 +7,16 @@ import ItemDetailContainer from './container/ItemDetailContainer/ItemDetailConta
 //css BOOSTRAP
 import "bootstrap/dist/css/bootstrap.min.css"
 
+import { CartContextProvider } from './context/CartContext'
 
 
 
 function App() {
 
 
-
   return (
+
+    <CartContextProvider>
 
     <BrowserRouter>
 
@@ -32,6 +34,8 @@ function App() {
       </Routes>
 
     </BrowserRouter>
+
+    </CartContextProvider>
 
   )
 }

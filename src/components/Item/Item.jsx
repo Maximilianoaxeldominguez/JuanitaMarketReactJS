@@ -2,12 +2,6 @@ import { Link } from "react-router-dom"
 import "./Item.css"
 
 
-const AgregarAlCarrito = () => {
-
-  console.log(AgregarAlCarrito)
-}
-
-
 const Item = ({ product }) => {
 
   return (
@@ -18,7 +12,7 @@ const Item = ({ product }) => {
 
         <div>
           <div className="card-img">
-            <img src={product.foto} alt='' width="100% " height="500px" />
+            <img src={product.img} alt='' width="100% " height="500px" />
           </div>
           <div className="card-name">
             {`${product.name}`}
@@ -32,7 +26,7 @@ const Item = ({ product }) => {
 
       <div>
 
-        <button className="btn btn-primary card-btn" onClick={AgregarAlCarrito}>Agregar al carrito</button>
+        <button className="btn btn-primary card-btn">Agregar al carrito</button>
         
       </div>
 

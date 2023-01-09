@@ -1,19 +1,28 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import { doc, getDoc, getFirestore } from "firebase/firestore"
+
 import ItemDetail from "../../components/ItemDetail/ItemDetail"
-import { gFetch } from "../../helpers/gFetch"
+
 
 
 const ItemDetailContainer = () => {
 
   const [product, setProduct] = useState({})
-  const { productoId } = useParams()
+  const { categoriaId } = useParams()
 
-  useEffect ( () => {
+  console.log(categoriaId)
 
-    gFetch(productoId)
-    .then(resp => setProduct(resp))
-    .catch(err=>console.log(err))
+  useEffect ( (categoriaId) => {
+
+    console.log(categoriaId)
+    const db = getFirestore()
+    const queryDoc = doc(db,"Products",categoriaId)
+
+    getDoc(queryDoc)
+    .then(response => setProduct (  { id: response.id, ...response.data()  }  ) )
+    .catch(err => console.log(err))
+    .finally()
 
   }
   ,[])
