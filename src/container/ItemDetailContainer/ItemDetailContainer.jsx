@@ -9,23 +9,21 @@ import ItemDetail from "../../components/ItemDetail/ItemDetail"
 const ItemDetailContainer = () => {
 
   const [product, setProduct] = useState({})
-  const { categoriaId } = useParams()
 
-  console.log(categoriaId)
+  const { productoId } = useParams() 
 
-  useEffect ( (categoriaId) => {
 
-    console.log(categoriaId)
+
+  useEffect ( () => {
+
     const db = getFirestore()
-    const queryDoc = doc(db,"Products",categoriaId)
+    const queryDoc = doc(db,"Products",productoId)
 
     getDoc(queryDoc)
     .then(response => setProduct (  { id: response.id, ...response.data()  }  ) )
     .catch(err => console.log(err))
-    .finally()
-
   }
-  ,[])
+  ,[productoId])
 
   return (
     

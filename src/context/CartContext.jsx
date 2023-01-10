@@ -5,35 +5,28 @@ const CartContext = createContext([])
 export const useCartContext = () => useContext(CartContext)
 
 
-
 export const CartContextProvider = ({ children } ) => {
 
     const [ cartList, setCartList ] = useState([])
 
     const addToCart = (product) => {
 
-        const idx = cartList.findIndex(product => product.id === product )
+        const idx = cartList.findIndex(prod => prod.id === product.id )
 
             if ( idx === -1 ) {
                 
-                setCartList([
+                setCartList( [
                 ...cartList,
                 product
-            ])
-
+            ] )
             } else {
-                 cartList[idx].cantidad += product.cantidad
 
+                 cartList[idx].cantidad += product.cantidad
                  setCartList( [ ...cartList ] )
 
-            }
-            
-            
-
+            }        
     }
-
-
-    
+  
      // It sets the cartList to an empty array.
     const emptyCart = () => setCartList([])
 
@@ -48,7 +41,7 @@ export const CartContextProvider = ({ children } ) => {
 
     // eliminar item
 
-    const deleteItem = ( id ) => cartList.filter( product => product.id != id  )
+    const deleteItem = ( id ) => setCartList(cartList.filter( product => product.id != id  ))
 
 
 
