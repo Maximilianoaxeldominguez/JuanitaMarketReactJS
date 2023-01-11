@@ -2,6 +2,7 @@
 .cardflex{
     margin-top: 3%;
     width: 30%;
+    font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 .card-name{
@@ -10,6 +11,7 @@
     color: black;
     font-weight: bold;
     font-size: 1.3rem;
+    text-transform: uppercase;
 }
 
 .card-price{
@@ -24,6 +26,10 @@
 }
 
 .card-btn{
-    margin-left: 38%;
+    margin-left: 42%;
     margin-top: 2%;
+}
+
+.imgList{
+    margin-left: 15%;
 }

@@ -1,0 +1,36 @@
+.itemDetailContainer{
+    height: 70vh;
+}
+
+.itemContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.imgItemContainer{
+    width: 30%;
+}
+
+.prodDetailContainer{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+width: 40%;
+}
+
+.productName{
+    font-size: 60px;
+    text-transform: uppercase;
+}
+
+.productDetail{
+    margin-top: 5%;
+    font-size: 25px;
+}
+
+.productCategory{
+    font-size: 25px;
+}
+
+.productPrice{
+    font-size: 25px;
+}

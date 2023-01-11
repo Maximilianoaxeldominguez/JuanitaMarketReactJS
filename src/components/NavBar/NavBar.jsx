@@ -1,11 +1,12 @@
 import { NavLink } from "react-router-dom"
-import CartWidget from "./CartWidget"
+import CartWidget from "../CartWidget/CartWidget"
+import "./navBar.css"
 
 
 const NavBar = () => {
 
     return(
-      <div>
+      <div className="navBar">
       <nav className="navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example">
     <div className="container-fluid">
       <NavLink className="navbar-brand" to="/">Juanita Market</NavLink>

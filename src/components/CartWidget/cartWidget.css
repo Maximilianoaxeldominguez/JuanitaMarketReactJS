@@ -1,0 +1,17 @@
+.cartWidgetFlex{
+    display: flex;
+    flex-direction: row;
+    width: 100px;
+}
+
+.totalQuantity{
+    color: white;
+    text-decoration: none;
+    margin-top: 15%;
+    background-color: orange;
+    border-radius: 50px;
+    width: 25%;
+    height: 2.5vh;
+    font-weight: bold;
+    text-align: center;
+}

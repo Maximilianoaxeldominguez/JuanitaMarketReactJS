@@ -8,6 +8,7 @@ import ItemDetailContainer from './container/ItemDetailContainer/ItemDetailConta
 import "bootstrap/dist/css/bootstrap.min.css"
 
 import { CartContextProvider } from './context/CartContext'
+import Footer from './components/footer/footer'
 
 
 
@@ -28,10 +29,11 @@ function App() {
       <Route path="/categoria/:categoriaId" element={<ItemListContainer/>}/>
       <Route path="/detail/:productoId" element={<ItemDetailContainer/>}/>
       <Route path="/cart" element={<CartContainer/>}/>
-
       <Route path="*" element={<Navigate to="/" /> }/> //* Si la ruta no exite me lleva a la raiz // 
-      
+
       </Routes>
+
+      <Footer/>
 
     </BrowserRouter>
 

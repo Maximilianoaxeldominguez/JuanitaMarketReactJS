@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import { useCartContext } from "../../context/CartContext"
 import { ItemCount } from "../ItemCount/ItemCount2"
+import "./itemDetail.css"
 
 const ItemDetail = ( {product} ) => {
 
@@ -15,16 +16,20 @@ const ItemDetail = ( {product} ) => {
 
   return (
 
-    <div className="row">
-        <div className="col">
-            <h2>{product.name} </h2>
-            <img src={product.img} className="w-50" alt=" imagen del producto" />
-            <h3>categorias: {product.category} </h3>
-            <h4>precio : {product.price } </h4>
-        </div>
-        <div className="col">
+    <div className="itemDetailContainer">
 
-          { isCount ? 
+      <div className="itemContainer">
+
+        <div className="imgItemContainer">
+            <img src={product.img} className="w-75" alt=" imagen del producto" />
+        </div>
+
+         <div className="prodDetailContainer">
+            <h1 className="productName">{product.name} </h1>
+            <p className="productDetail"> {product.detail} </p>
+            <p className="productCategory">categorias: {product.category} </p>
+            <p className="productPrice">precio : $ {product.price } </p>
+            { isCount ? 
           <ItemCount
             stock={10}
             inital={1}
@@ -40,10 +45,10 @@ const ItemDetail = ( {product} ) => {
             </Link>
             </>
             }
-          
         </div>
-        
-        
+
+        </div>
+            
     </div>
   )
 }

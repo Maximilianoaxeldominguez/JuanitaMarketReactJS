@@ -48,7 +48,7 @@ useEffect ( () => {
       {loading ?
         <h2>cargando productos... </h2>
         :
-        <ItemList className="ItemListFlex" products={products} />
+        <ItemList products={products} />
       }
 
     </>

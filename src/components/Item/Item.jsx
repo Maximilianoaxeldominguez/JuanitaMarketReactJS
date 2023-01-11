@@ -12,7 +12,7 @@ const Item = ({ product }) => {
 
         <div>
           <div className="card-img">
-            <img src={product.img} alt='' width="100% " height="500px" />
+            <img src={product.img} alt='img producto' width="75% " height="350px" className="imgList"/>
           </div>
           <div className="card-name">
             {`${product.name}`}
@@ -22,14 +22,9 @@ const Item = ({ product }) => {
           </div>
         </div>
 
+        <button className=" btnDetail btn btn-primary card-btn">Ver detalle</button>
+
       </Link>
-
-      <div>
-
-        <button className="btn btn-primary card-btn">Agregar al carrito</button>
-        
-      </div>
-
 
     </div>
 

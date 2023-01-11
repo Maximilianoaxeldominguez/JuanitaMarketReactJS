@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import Swal from 'sweetalert2'
 
 const CartContext = createContext([])
 
@@ -8,6 +9,7 @@ export const useCartContext = () => useContext(CartContext)
 export const CartContextProvider = ({ children } ) => {
 
     const [ cartList, setCartList ] = useState([])
+
 
     const addToCart = (product) => {
 
@@ -19,16 +21,20 @@ export const CartContextProvider = ({ children } ) => {
                 ...cartList,
                 product
             ] )
+
             } else {
 
                  cartList[idx].cantidad += product.cantidad
                  setCartList( [ ...cartList ] )
-
-            }        
+                
+            }
+            
     }
   
      // It sets the cartList to an empty array.
-    const emptyCart = () => setCartList([])
+    const emptyCart = () => {
+        setCartList([])
+    }
 
 
     // precio  total
@@ -44,6 +50,22 @@ export const CartContextProvider = ({ children } ) => {
     const deleteItem = ( id ) => setCartList(cartList.filter( product => product.id != id  ))
 
 
+    // mostrar alerta compra
+
+    const finishBuyAlert = () => {
+
+        Swal.fire(
+            'Gracias por tu compra',
+            'a la brevedad nos estaremos comunicando',
+            'success'
+        )
+        emptyCart()
+      }
+        
+
+
+
+
 
     return(
         <CartContext.Provider value={{
@@ -52,10 +74,9 @@ export const CartContextProvider = ({ children } ) => {
             emptyCart,
             totalQuantity,
             totalPrice,
-            deleteItem
+            deleteItem,
+            finishBuyAlert
         }} >
-
-            
             { children }     
         </CartContext.Provider>
     )
