@@ -35,7 +35,7 @@ const CartList = () => {
       <td className='sizingTdCartImg' > <img src={ product.img } className="imgCart w-50" alt="" />  </td>
       <td className='sizingTdCartname' > { product.name } </td>
       <td className='sizingTdCartPrice' > $ { product.price } </td>
-      <td className='sizingTdCartQuantity' >  <input  className='w-25' type="number" value={1} /> </td>
+      <td className='sizingTdCartQuantity' >  <input  className='w-25' type="number" value={product.cantidad} /> </td>
       <td className='sizingTdCartPrice' > <button className='btn btn-danger' onClick={ () => deleteItem(product.id)  }>X</button> </td>
       </tr> 
      )}
@@ -45,8 +45,9 @@ const CartList = () => {
       <button   className='btn btnBuy btn-success active'  onClick={finishBuyAlert} > TERMINAR COMPRA </button> 
       </div>
 
-    </tbody>
+      
 
+    </tbody>
     
   </Table>
 

@@ -28,7 +28,7 @@ export const CartContextProvider = ({ children } ) => {
                  setCartList( [ ...cartList ] )
                 
             }
-            
+
     }
   
      // It sets the cartList to an empty array.
